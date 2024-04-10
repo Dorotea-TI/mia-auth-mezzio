@@ -1,12 +1,12 @@
 {
-    "name": "agencycoda/mia-auth-mezzio",
-    "description": "The library for Mezzio",
+    "name": "doroteati/mia-auth-mezzio",
+    "description": "The library for Mezzio and Dorotea",
     "version": "0.0.59",
     "minimum-stability": "stable",
     "license": "MIT",
     "authors": [{
-        "name": "Matias Camiletti",
-        "homepage": "https://agencycoda.com"
+        "name": "Heider Hernandez",
+        "homepage": "https://dorotea.co"
     }],
     "require": {
         "php": ">=7.3",
@@ -25,11 +25,11 @@
     "repositories": [
         {
             "type": "git",
-            "url": "https://github.com/agencycoda/mia-core-mezzio.git"
+            "url": "https://github.com/Dorotea-TI/mia-core-mezzio.git"
         },
         {
             "type": "git",
-            "url": "https://github.com/agencycoda/mia-eloquent-mezzio.git"
+            "url": "https://github.com/Dorotea-TI/mia-eloquent-mezzio.git"
         }
     ]
 }
