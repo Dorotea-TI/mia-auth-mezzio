@@ -1,4 +1,6 @@
-<?php namespace Mia\Auth\Model;
+<?php
+
+namespace Mia\Auth\Model;
 
 /**
  * Description of Model
@@ -77,6 +79,10 @@ class MIAUser extends \Illuminate\Database\Eloquent\Model
 {
     const ROLE_ADMIN = 1;
     const ROLE_GENERAL = 0;
+    const ROLE_VENDEDOR = 2;
+    const ROLE_LIDER_COMERCIAL = 3;
+    const ROLE_GESTOR_COMERCIAL = 4;
+    const ROLE_DIRECTOR = 5;
 
     const STATUS_PENDING = 0;
     const STATUS_ACTIVE = 1;
@@ -88,7 +94,7 @@ class MIAUser extends \Illuminate\Database\Eloquent\Model
      * @var array
      */
     protected $hidden = ['deleted', 'password'];
-    
+
     /**
      * 
      * @param string $password
@@ -114,9 +120,9 @@ class MIAUser extends \Illuminate\Database\Eloquent\Model
     }
 
     /**
-    * 
-    * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-    */
+     * 
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
     public function roleo()
     {
         return $this->belongsTo(MIARole::class, 'role');
@@ -129,7 +135,7 @@ class MIAUser extends \Illuminate\Database\Eloquent\Model
     protected static function boot(): void
     {
         parent::boot();
-        
+
         static::addGlobalScope('exclude', function (\Illuminate\Database\Eloquent\Builder $builder) {
             $builder->where('mia_user.deleted', 0);
         });
